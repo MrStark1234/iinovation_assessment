@@ -1,3 +1,8 @@
+## Credentials for testing the app
+
+- username : **testing**
+- passsword : **test**
+
 # Innovation Telemedicine-App
 
 Innovation Telemedicine-App is a mobile application that facilitates telemedicine services, allowing users to schedule appointments, consult with healthcare professionals, and manage their medical information.
