@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Button,
-  Picker,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import axios from "axios";
+import Header from "../components/Header";
 
 const Login = ({ navigation }) => {
   const [username, setUsername] = useState("");
@@ -23,12 +17,18 @@ const Login = ({ navigation }) => {
         }
       );
 
-      console.log(response.data);
-      // You may want to handle successful registration, e.g., show a success message or navigate to another screen
-      navigation.navigate("Appointment");
+      const data = response.data;
+
+      if (data && data.token) {
+        localStorage.setItem("token", data.token);
+        navigation.navigate("Appointment");
+      } else {
+        // Handle the case where no token is received
+        console.error("No token received in the login response.");
+      }
     } catch (error) {
       console.error(error);
-      // Handle registration error, e.g., show an error message
+      // Handle login error, e.g., show an error message
     }
   };
 
@@ -49,6 +49,12 @@ const Login = ({ navigation }) => {
         />
 
         <Button color="crimson" title="Login" onPress={handleLogin} />
+        <View style={styles.margin}>
+          <Button
+            title="Register"
+            onPress={() => navigation.navigate("Register")}
+          />
+        </View>
       </View>
     </View>
   );
@@ -60,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 16,
-    backgroundColor: "darkslateblue",
+    backgroundColor: "currentcolor",
   },
   form: {
     width: "80%", // Adjust the width as needed
@@ -78,6 +84,9 @@ const styles = StyleSheet.create({
     padding: 8,
     width: "100%", // Make the input fill the width
     color: "white",
+  },
+  margin: {
+    marginTop: "10px",
   },
 });
 

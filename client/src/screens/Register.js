@@ -31,7 +31,7 @@ const RegistrationScreen = ({ navigation }) => {
 
       console.log(response.data);
       // You may want to handle successful registration, e.g., show a success message or navigate to another screen
-      navigation.navigate("Home");
+      navigation.navigate("Login");
     } catch (error) {
       console.error(error);
       // Handle registration error, e.g., show an error message
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 16,
-    backgroundColor: "darkslateblue",
+    backgroundColor: "currentcolor",
   },
   form: {
     width: "80%", // Adjust the width as needed

@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 const Splash = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate("Register");
-    }, 300);
+      navigation.replace("Login");
+    }, 3000);
   }, []);
   return (
     <View style={styles.container}>
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "darkslateblue",
+    backgroundColor: "currentcolor",
   },
   logo: {
     width: 100,
     height: 100,
-    tintColor: "#fff",
+    tintColor: "blue",
   },
-  title: { color: "#fff", fontSize: 20, fontWeight: "800", marginTop: 20 },
+  title: { color: "crimson", fontSize: 20, fontWeight: "800", marginTop: 20 },
 });

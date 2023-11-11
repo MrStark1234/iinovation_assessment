@@ -56,7 +56,8 @@ router.post("/login", async (req, res) => {
       { username: user.username, role: user.role },
       process.env.Seckey
     );
-    res.json({ token });
+    success = true;
+    res.json({ success, token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
