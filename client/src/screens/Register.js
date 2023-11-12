@@ -20,7 +20,7 @@ const RegistrationScreen = ({ navigation }) => {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/user/register",
+        "https://telemedicine-server.onrender.com/api/user/register",
         {
           username,
           password,

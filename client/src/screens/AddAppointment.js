@@ -24,7 +24,7 @@ const AddAppointmentScreen = ({ navigation, route }) => {
       setError(null);
 
       const response = await axios.post(
-        "http://localhost:8000/api/appointments/create",
+        "https://telemedicine-server.onrender.com/api/appointments/create",
         {
           name,
           age,

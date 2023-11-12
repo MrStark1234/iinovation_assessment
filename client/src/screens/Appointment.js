@@ -27,7 +27,7 @@ const AppointmentsScreen = ({ navigation }) => {
       // console.log("authToken:", authToken);
 
       const response = await axios.get(
-        "http://localhost:8000/api/appointments",
+        "https://telemedicine-server.onrender.com/api/appointments",
         {
           headers: {
             Authorization: localStorage.getItem("token"),
@@ -42,7 +42,7 @@ const AppointmentsScreen = ({ navigation }) => {
   const handleDeleteAppointment = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:8000/api/appointments/delete/${id}`,
+        `https://telemedicine-server.onrender.com/api/appointments/delete/${id}`,
         {
           headers: {
             Authorization: localStorage.getItem("token"),

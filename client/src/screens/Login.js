@@ -10,7 +10,7 @@ const Login = ({ navigation }) => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/user/login",
+        "https://telemedicine-server.onrender.com/api/user/login",
         {
           username,
           password,
