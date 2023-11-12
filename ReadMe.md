@@ -50,9 +50,7 @@ Innovation Telemedicine-App is a mobile application that facilitates telemedicin
 
    ```
 
-2. **Start the Server:**
+2. **For Server:**
    ```bash
-   cd server
-   npm install
-   npx nodemon
+   Server hosted on :- https://telemedicine-server.onrender.com
    ```
